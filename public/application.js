@@ -1,8 +1,9 @@
-var mainApplicationModuleName = 'RedSocial';
+var mainApplicationModuleName = 'example';
 
 var mainApplicationModuleName = angular.module(mainApplicationModuleName, ['example']);
 
 
 angular.element(document).ready(function(){
-	angular.boostrap(document, [mainApplicationModuleName]);
+	//angular.bootstrap(document, [mainApplicationModuleName]);
+	angular.bootstrap(document, ['example']);
 });

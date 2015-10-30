@@ -1,3 +1,4 @@
+
 // Invocar modo JavaScript 'strict'
 'use strict';
 
@@ -26,4 +27,5 @@ module.exports = function() {
 
   //Cargar los archivos de configuración de estrategias de Passport
   require('./strategies/local.js')();
+  require('./strategies/google.js')();
 };

@@ -7,7 +7,7 @@ var users = require('../../app/controllers/users.server.controller'),
 
 //Definir el método del módulo routes
 module.exports = function(app) {
-	//Configurar las rutas 'signup'
+  //Configurar las rutas 'signup'
   app.route('/signup')
      .get(users.renderSignup)
      .post(users.signup);
@@ -20,7 +20,20 @@ module.exports = function(app) {
        failureRedirect: '/signin',
        failureFlash: true
      }));
-  
-  //Cofigurar la route 'signout'
+     
+ // Configurar las rutas Google OAuth 
+  app.get('/oauth/google', passport.authenticate('google', {
+    scope: [
+      'https://www.googleapis.com/auth/userinfo.profile',
+      'https://www.googleapis.com/auth/userinfo.email'
+    ],
+    failureRedirect: '/signin'
+  }));
+  app.get('/oauth/google/callback', passport.authenticate('google', {
+    failureRedirect: '/signin',
+    successRedirect: '/'
+  }));
+
+  //Configurar la route 'signout'
   app.get('/signout', users.signout);
 };
