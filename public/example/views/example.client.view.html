@@ -1,0 +1,27 @@
+<section ng-controller="ExampleController">
+  <div data-ng-show="!authentication.user">
+    
+      
+      <a class="btn btn-success btn-lg" role="button" href="/signin">Identificarse</a>
+    
+      
+      
+      <a class="btn btn-info btn-lg" role="button" href="/signup">Crear Cuenta</a>
+    
+    
+    
+  </div>
+  <div data-ng-show="authentication.user">
+    
+    <h1>Hola <span ng-if="authentication.user.username" data-ng-bind="authentication.user.username"></span></h1>
+    
+    <h1 ng-if="authentication.user.fullName == undefined">Hola 
+      <span ng-if="authentication.user.fullName == undefined" data-ng-bind="authentication.user.fullName"></span></h1>
+   
+    <a href="/signout">Cerrar Sesión</a>
+    <ul>
+      <li><a href="/#!/articles">Listar Artículos</a></li>
+      <li><a href="/#!/articles/create">Crear Artículo</a></li>
+    </ul>
+  </div>
+</section>

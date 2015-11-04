@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+
+      <!-- CSS -->
+      <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
+      <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+      <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="assets/css/form-elements.css">
+      <link rel="stylesheet" href="assets/css/style.css">
+
+      <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+      <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+      <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+          <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+      <!-- Favicon and touch icons -->
+      <link rel="shortcut icon" href="assets/ico/favicon.png">
+      <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+<!-- Usar la propiedad 'title' para renderizar un título de página  -->
+<title><%= title %></title>
+</head>
+<body>
+ <nav class="navbar navbar-inverse">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-3">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Brand</a>
+      </div>
+<!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="navbar-collapse-3">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Works</a></li>
+          <li><a href="#">News</a></li>
+          <li><a href="#">Contact</a></li>
+          <li>
+            <a class="btn btn-default btn-outline btn-circle collapsed"  data-toggle="collapse" href="#nav-collapse3" aria-expanded="false" aria-controls="nav-collapse3">Search</a>
+          </li>
+        </ul>
+        <div class="collapse nav navbar-nav nav-collapse slide-down" id="nav-collapse3">
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Search" />
+            </div>
+            <button type="submit" class="btn btn-danger"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+          </form>
+        </div>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+  </nav><!-- /.navbar -->
+<section ng-view></section>
+
+
+<script type="text/javascript">
+  window.user = <%- user || 'null' %>;
+  </script>
+  
+<script src="assets/js/jquery-1.11.1.min.js"></script>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="assets/js/jquery.backstretch.min.js"></script>
+  <script src="assets/js/scripts.js"></script>
+<script type="text/javascript" src="/lib/angular/angular.js"></script>
+<script type="text/javascript" src="/lib/angular-route/angular-route.js"></script>
+<script type="text/javascript" src="/lib/angular-resource/angular-resource.js"></script>
+<script type="text/javascript" src="/articles/articles.client.module.js"></script>
+  <script type="text/javascript" src="/articles/controllers/articles.client.controller.js"></script>
+  <script type="text/javascript" src="/articles/services/articles.client.service.js"></script>
+  <script type="text/javascript" src="/articles/config/articles.client.routes.js"></script> 
+<script type="text/javascript" src="/example/example.client.module.js"></script>
+<script type="text/javascript" src="/example/controllers/example.client.controller.js"></script>
+<script type="text/javascript" src="/example/config/example.client.routes.js"></script>
+<script type="text/javascript" src="/users/users.client.module.js"></script>
+  <script type="text/javascript" src="/users/services/authentication.client.service.js"></script>
+<script type="text/javascript" src="/application.js"></script>
+</body>
+</html>
